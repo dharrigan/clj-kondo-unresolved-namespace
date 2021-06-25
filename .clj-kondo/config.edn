@@ -1,0 +1,11 @@
+{:skip-comments true
+ :linters
+ {:single-key-in true
+  :unsorted-required-namespaces {:level :warning}
+  :unused-binding {:exclude-destructured-as true}
+  :unresolved-symbol {:exclude [(expectations.clojure.test/defexpect)
+                                (foo.sql/defsql)]}
+  :unused-referred-var {:exclude {clojure.test [is deftest testing]
+                                  expectations.clojure.test [defexpect]
+                                  juxt.clip.repl [stop system]}}
+  :lint-as {expectations.clojure.test/defexpect clojure.test/deftest}}}
